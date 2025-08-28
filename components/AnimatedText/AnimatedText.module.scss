@@ -1,0 +1,25 @@
+.container {
+  // padding: var(--spacer-xl) 0;
+  // position: relative;
+  // padding: 20vh 0;
+
+  font-size: inherit;
+  position: relative;
+}
+
+// .text {
+//     text-transform: unset;
+
+//     > div > div {
+//         will-change: opacity;
+//     }
+// }
+
+.underline {
+  position: absolute;
+  bottom: 0.125em;
+  background: #c1fa50;
+  left: 0;
+  width: 100%;
+  height: 8px;
+}

@@ -1,0 +1,136 @@
+$menu-border-radius: 1rem;
+$menu-padding: 0.33rem;
+
+.container {
+  position: fixed;
+  top: var(--grid-margin);
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--grid-margin);
+  align-items: center;
+
+  > div {
+    width: 50%;
+    @include md {
+      width: 33%;
+      max-width: none !important;
+    }
+  }
+
+  > div > div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav {
+  justify-content: center;
+  flex-shrink: 0;
+  display: flex;
+
+  @include mdMax {
+    display: none !important;
+  }
+}
+
+.logo {
+  svg {
+    width: 7em;
+
+    @include md {
+      width: 10em;
+    }
+    path {
+      fill: var(--logo-color);
+    }
+  }
+}
+.menu {
+  background: var(--dark-green);
+  border-radius: $menu-border-radius;
+  padding: $menu-padding;
+  position: absolute;
+  left: 0;
+  top: 100%;
+
+  @include lg {
+    position: relative;
+  }
+
+  // &:hover {
+  //   .link {
+  //     color: white;
+  //   }
+  // }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include lg {
+      flex-direction: row;
+    }
+
+    li {
+      line-height: 1;
+
+      // &:not(:first-child):not(:last-child) {
+      //   .link {
+      //     padding-left: 0;
+      //     padding-right: 0;
+      //   }
+      // }
+    }
+  }
+}
+
+.link {
+  background: none;
+  border: 0;
+  font-size: var(--body-size-small);
+  font-weight: 700;
+  padding: 1em 1.5em;
+  pointer-events: all;
+
+  &.isActive {
+    span {
+      color: var(--cyber-green);
+    }
+  }
+
+  // &:hover {
+  //   span {
+  //     color: #000 !important;
+  //   }
+  // }
+
+  span {
+    position: relative;
+    z-index: 2;
+    transition: 0.6s var(--ease-out-expo);
+  }
+}
+
+.button {
+  justify-content: flex-end;
+  display: flex;
+}
+
+.activeBorder {
+  position: absolute;
+  top: $menu-padding;
+  height: calc(100% - $menu-padding * 2);
+  // margin-top: 0.25em;
+  // margin-bottom: -0.25em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: $menu-border-radius - 0.33;
+  transition: 0.6s var(--ease-out-expo);
+  transform-origin: center;
+  pointer-events: none;
+}

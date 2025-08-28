@@ -1,0 +1,52 @@
+.container {
+  @include viewportHeight(400);
+  position: relative;
+}
+
+.wrap {
+  @include viewportHeight(100);
+  align-items: center;
+  display: flex;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  // overflow: hidden;
+}
+
+.heading {
+  margin-right: 3.33vw;
+}
+.gridWrap {
+  display: flex;
+  overflow: hidden;
+}
+.grid {
+  display: flex;
+  // gap: 3em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  align-items: center;
+}
+
+.card {
+  width: 30%;
+  flex-shrink: 0;
+
+  &:first-child {
+    // margin-left: 33.33%;
+    margin-left: calc(30% + var(--grid-gutter) * 2);
+  }
+}
+.cardWrap {
+  padding: var(--box-padding-small);
+  border-radius: var(--border-radius);
+  aspect-ratio: 3/4;
+  width: 100%;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}

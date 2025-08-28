@@ -1,0 +1,65 @@
+.toggle {
+    background: transparent;
+    border-radius: 99px;
+    border: 0;
+    border: 1px solid white;
+    bottom: var(--grid-gutter);
+    color: white;
+    font-family: Helvetica;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+    mix-blend-mode: difference;
+    padding: .5em 1em;
+    position: fixed;
+    right: var(--grid-gutter);
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: auto;
+    z-index: 99999999;
+}
+
+.grid {
+    height: 100vh;
+    left: 0;
+    opacity: 0.4;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999999;
+
+    > div {
+        > div {
+            background: #ed9a9a;
+            border-left: 1px solid red;
+            border-right: 1px solid red;
+            height: 100vh;
+        }
+    }
+}
+
+// @for $i from 1 through $columns {
+//     .gc#{$i} {
+//         grid-column: span #{$i} / span #{$i};
+//     }
+
+//     .offset#{$i} {
+//         grid-column-start: #{$i+1} !important;
+//     }
+// }
+
+// @each $breakpoint, $size in $breakpoints {
+//     @media screen and (min-width: $size) {
+//         @for $i from 1 through $columns {
+//             .#{$breakpoint}gc#{$i} {
+//                 grid-column: span #{$i} / span #{$i};
+//             }
+        
+//             .#{$breakpoint}offset#{$i} {
+//                 grid-column-start: #{$i + 1};
+//             }
+//         }
+//     }
+// }

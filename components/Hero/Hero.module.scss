@@ -1,0 +1,121 @@
+.container {
+  padding: var(--spacer-xl) 0;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.video {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  opacity: 1;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    background: rgba(0, 0, 0, 0.2);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
+  margin-top: 0.1em;
+  position: relative;
+  justify-content: center;
+  perspective: 1000px;
+
+  > div {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    transform-origin: center;
+    height: 100%;
+
+    &:not(:nth-child(1)) {
+      position: absolute;
+      top: 0;
+    }
+
+    > span {
+      display: inline-flex;
+      padding: 0.1em;
+      color: var(--foreground);
+      border-radius: var(--border-radius);
+      border: 0.033em solid var(--foreground);
+
+      span {
+        position: relative;
+        top: 0.1em;
+        line-height: 0.9;
+      }
+    }
+  }
+}
+
+.documents {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.document {
+  height: 25vh;
+  width: 25vh;
+
+  @include md {
+    height: 25vw;
+    width: 25vw;
+  }
+
+  &.one {
+    position: absolute;
+    top: 5vh;
+    left: 20vw;
+  }
+
+  &.two {
+    position: absolute;
+    bottom: 10vh;
+    left: 5vw;
+  }
+
+  &.three {
+    position: absolute;
+    bottom: 0vh;
+    left: 60vw;
+  }
+}

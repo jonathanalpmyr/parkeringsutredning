@@ -1,0 +1,61 @@
+$columns: 12;
+
+:root {
+  --grid-gutter: 24px;
+  --grid-columns: #{$columns};
+  --grid-margin: 1.5rem;
+
+  @include md {
+    --grid-gutter: 64px;
+  }
+
+  // @include xxl {
+  //     --grid-gutter: 30px;
+  // }
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding: 0 var(--grid-margin);
+  width: 100%;
+
+  @include xxl {
+    max-width: 80%;
+  }
+
+  @include xxxl {
+    max-width: 1920px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-column-gap: var(--grid-gutter);
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+}
+
+@for $i from 1 through $columns {
+  .sm-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+
+  .o-#{$i} {
+    grid-column-start: #{$i + 1} !important;
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @media screen and (min-width: $size) {
+    @for $i from 1 through $columns {
+      .#{$breakpoint}-#{$i} {
+        grid-column: span #{$i} / span #{$i};
+      }
+
+      .o-#{$breakpoint}-#{$i} {
+        grid-column-start: #{$i + 1} !important;
+      }
+    }
+  }
+}

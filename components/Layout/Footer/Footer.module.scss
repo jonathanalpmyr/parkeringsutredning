@@ -1,0 +1,24 @@
+// .footerBg {
+//   background-color: #fff;
+// }
+
+.container {
+  @include viewportHeight(50);
+  // background: #111;
+  position: relative;
+}
+
+.wrap {
+  position: sticky;
+  bottom: 0;
+  @include viewportHeight(50);
+  padding: 4em 0;
+}
+
+.logo {
+  svg {
+    path {
+      fill: var(--logo-color);
+    }
+  }
+}

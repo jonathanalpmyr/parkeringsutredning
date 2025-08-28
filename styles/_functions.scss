@@ -1,0 +1,90 @@
+@function clampPixels($min, $max) {
+  $screen-width: 1920;
+  $vw: $max / ($screen-width / 100);
+  @return clamp(#{$min}px, #{$vw}vw, #{$max}px);
+}
+
+@mixin md {
+  @media (min-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin mdMax {
+  @media (max-width: #{$md - 1}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin lgMax {
+  @media (max-width: #{$lg - 1}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$xl}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{$xxl}) {
+    @content;
+  }
+}
+
+@mixin xxxl {
+  @media (min-width: #{$xxxl}) {
+    @content;
+  }
+}
+
+// Hover
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+// Fill height
+@mixin fill-height {
+  height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+
+  @include lg {
+    height: 100vh;
+  }
+}
+
+@mixin minViewportHeight($height) {
+  min-height: calc(var(--vh, 1vh) * $height);
+}
+
+@mixin viewportHeight($height) {
+  height: calc(var(--vh, 1vh) * $height);
+}
+
+// Transition delay
+@mixin transitionDelay($number, $value, $startValue) {
+  @for $i from 1 through $number {
+    &:nth-child(#{$i}) {
+      transition-delay: (#{$startValue + $i * $value});
+    }
+  }
+}
+
+// Child ransition delay
+@mixin childTransitionDelay($number, $value, $startValue) {
+  @for $i from 1 through $number {
+    &:nth-child(#{$i}) span {
+      transition-delay: (#{$startValue + $i * $value});
+    }
+  }
+}

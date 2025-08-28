@@ -1,0 +1,49 @@
+.container {
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--grid-gutter);
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  > div {
+    min-width: 0;
+  }
+}
+
+.column {
+  border-radius: var(--border-radius);
+  background: #fff;
+  padding: var(--box-padding-small);
+
+  > svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+    li {
+      & + li {
+        margin-top: 1em;
+      }
+      display: flex;
+      gap: 1em;
+      align-items: center;
+
+      svg {
+        flex-shrink: 0;
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
+  }
+}

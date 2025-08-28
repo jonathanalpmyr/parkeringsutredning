@@ -1,0 +1,128 @@
+$cell-padding: 2em;
+.container {
+  padding: var(--spacer-xl) 0;
+  position: relative;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.box {
+  padding: var(--box-padding);
+  background: var(--bg-dark);
+  border-radius: var(--border-radius);
+  overflow-x: scroll;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+  pointer-events: auto;
+
+  h3 {
+    margin: 0;
+  }
+
+  thead {
+    position: sticky;
+    top: 0;
+    background: var(--bg-dark);
+    // margin-bottom: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    th {
+      padding: $cell-padding 0;
+      vertical-align: bottom;
+    }
+  }
+
+  th,
+  td {
+    width: 26.666%;
+
+    &:first-child {
+      padding-left: 0;
+      width: 20%;
+
+      @include mdMax {
+        display: none;
+      }
+    }
+
+    &:not(:first-child) {
+      padding: $cell-padding;
+    }
+
+    ul {
+      list-style: disc;
+      padding: 0 0 0 1em;
+
+      li {
+        & + li {
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+
+  tr {
+    td,
+    th {
+      &:nth-child(3) {
+        background: rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+      &:nth-child(1) {
+        border: 0;
+      }
+    }
+  }
+
+  // Border radius for featured column
+  thead {
+    th {
+      &:nth-child(3) {
+        color: var(--cyber-green);
+      }
+      &:nth-child(3) {
+        border-radius: 1em 1em 0 0;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:last-child {
+        td {
+          &:nth-child(3) {
+            border-radius: 0 0 1em 1em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.rowHeading {
+  text-transform: uppercase;
+}
+
+.button {
+  width: 100%;
+  margin-top: 1em;
+}

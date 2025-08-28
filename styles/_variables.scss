@@ -1,0 +1,22 @@
+:root {
+  --dark-green: #2a4334;
+  --medium-green: #286c43;
+  --cyber-green: #c1fa50;
+
+  --logo-color: var(--dark-green);
+
+  --bg-light: #dde8cf;
+  --bg-dark: #198142;
+
+  --background: var(--bg-light);
+  --foreground: var(--dark-green);
+
+  --heading-font: "Formula Condensed";
+
+  --box-padding: #{clampPixels(24, 128)};
+  --box-padding-small: #{clampPixels(24, 64)};
+
+  --button-border-radius: 1em;
+
+  --border-radius: 2rem;
+}

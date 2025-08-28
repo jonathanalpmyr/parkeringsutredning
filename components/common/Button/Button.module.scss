@@ -1,0 +1,14 @@
+.container {
+  background: #c1fa50;
+  border-radius: var(--button-border-radius);
+  border: 0;
+  color: #000;
+  font-size: var(--body-size-small);
+  font-weight: 700;
+  padding: 1.25em 2em;
+  text-align: center;
+
+  &.white {
+    background: #fff;
+  }
+}

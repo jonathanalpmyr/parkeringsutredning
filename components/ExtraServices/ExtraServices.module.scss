@@ -1,0 +1,36 @@
+.container {
+  padding: var(--spacer-xl) 0;
+  position: relative;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-gap: var(--grid-gutter);
+  grid-template-columns: 1fr;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: var(--grid-gutter);
+    grid-row-gap: calc(var(--grid-gutter) / 2);
+  }
+}
+
+.box {
+  border-radius: var(--border-radius);
+  padding: var(--box-padding-small);
+  background: #fff;
+
+  &.large {
+    background: var(--bg-dark);
+
+    @include md {
+      grid-row-start: 1;
+      grid-row-end: 4;
+    }
+  }
+}
+
+.price {
+  color: var(--medium-green);
+}
