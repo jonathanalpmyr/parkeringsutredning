@@ -11,7 +11,7 @@
   --background: var(--bg-light);
   --foreground: var(--dark-green);
 
-  --heading-font: "Formula Condensed";
+  --heading-font: "Formula Condensed", arial;
 
   --box-padding: #{clampPixels(24, 128)};
   --box-padding-small: #{clampPixels(24, 64)};
